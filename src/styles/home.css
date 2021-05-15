@@ -1,0 +1,82 @@
+:root{
+    --dim: #666;
+    --gainsboro: #DDD;
+    --jet: #333;
+}
+
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.inputGroup label{
+    margin-left: 3px;
+    font-family: 'Open Sans Bold', sans-serif;
+}
+
+input,
+textarea{
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid var(--gainsboro);
+    transition: all 0.2s;
+    -webkit-appearance: none;
+}
+
+input:focus,
+textarea:focus{
+    border: 1px solid var(--dim);
+}
+
+textarea{
+    resize: none;
+}
+
+
+form button{
+    margin: 20px auto;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 25px;
+    cursor: pointer;
+    background-color: var(--dim);
+    font-family: 'Open Sans Bold', sans-serif;
+    color: white;
+    transition: all 0.2s;
+}
+
+form button:hover{
+    background-color: var(--jet);
+}
+
+.formContainer{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 350px;
+}
+
+#category{
+    margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+    .imageContainer{
+        width: 50%;
+        background: url("../images/image.svg") no-repeat;
+        background-size: cover;
+    }
+
+    .formContainer{
+        width: 50%;
+        margin: auto;
+    }
+
+    .home{
+        display: flex;
+        align-items: stretch;
+    }
+}

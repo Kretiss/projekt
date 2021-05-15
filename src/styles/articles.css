@@ -1,0 +1,73 @@
+.articlesHead{
+    display: flex;
+    background-color: #EEE;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0.5%;
+}
+
+.articlesHead div{
+    display: block;
+    width: fit-content;
+    margin: 10px;
+    font-family: 'Open Sans Bold', sans-serif;
+}
+
+.articlesHead div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.articlesHead span{
+    display: block;
+    width: fit-content;
+    background-color: #CCC;
+    padding: 5px 8px;
+    margin: 5px;
+    border-radius: 4px;
+}
+
+.articlesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.article{
+    width: 100%;
+    max-width: 350px;
+    background-color: #EEE;
+    border-radius: 4px;
+    margin: 2%;
+    padding: 2%;
+}
+
+.article h2{
+    margin-top: 5px;
+}
+
+.articleCategories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.articleCategories span{
+    margin: 5px;
+    font-size: 80%;
+}
+
+.article small{
+    margin-left: 5px;
+}
+
+.article .content{
+    padding: 5px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,356 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src:  url('../webfonts/OpenSans-Regular.woff2') format('woff2'),
+    url('../webfonts/OpenSans-Regular.woff') format('woff'),
+    url('../webfonts/OpenSans-Regular.ttf') format('ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    font-style: normal;
+    font-weight: 600;
+    src:  url('../webfonts/OpenSans-SemiBold.woff2') format('woff2'),
+    url('../webfonts/OpenSans-SemiBold.woff') format('woff'),
+    url('../webfonts/OpenSans-SemiBold.ttf') format('ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans Italic';
+    font-style: normal;
+    font-weight: 600;
+    src:  url('../webfonts/OpenSans-Italic.woff2') format('woff2'),
+    url('../webfonts/OpenSans-Italic.woff') format('woff'),
+    url('../webfonts/OpenSans-Italic.ttf') format('ttf');
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --header-height: 70px;
+    --blue: #0096fb;
+    --black: #141414;
+    --white: #FFFFFF;
+    --gray: #3D3D3D;
+    --lighter-gray: #5C5C5C;
+    --darker-gray: #292929;
+    --menuBtnColor: white;
+    --max-continer-width: 1350px;
+}
+
+body{
+    margin-top: var(--header-height);
+}
+
+body,
+footer{
+    font-family: 'Open Sans', sans-serif;
+}
+
+header{
+    font-family: 'Open Sans Bold', sans-serif;
+}
+
+.container{
+    margin: 0 auto;
+    width: 96%;
+    height: 100%;
+    max-width: var(--max-continer-width);
+}
+
+h1,
+h2{
+    text-align: center;
+}
+
+.notFound{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: forestgreen;
+}
+
+
+/*  HEADER  */
+/*  HEADER  */
+/*  HEADER  */
+
+.navButton{
+    height: calc(var(--header-height)/1.35);
+    width: calc(var(--header-height)/1.35);
+    color: var(--menuBtnColor);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7em;
+    transition: all 0.3s;
+}
+
+.navButtonHamburger{
+    height: 4px;
+    width: 34px;
+    margin: 0 auto;
+    background-color: var(--menuBtnColor);
+    border-radius: 3px;
+    position: relative;
+    transition: all 0.5s;
+    color:inherit;
+}
+
+.navButtonHamburger::before,
+.navButtonHamburger::after{
+    height: 4px;
+    width: 34px;
+    position: absolute;
+    background-color: var(--menuBtnColor);
+    border-radius: 3px;
+    content: "";
+    display: block;
+    transition: all 0.5s;
+}
+
+.navButtonHamburger::before{
+    transform: translateY(-12px);
+}
+
+.navButtonHamburger::after{
+    transform: translateY(12px);
+}
+
+.navButton:hover,
+.navButton.active{
+    --menuBtnColor: #0096fb;
+}
+
+.navButton.active .navButtonHamburger{
+    background-color: transparent;
+}
+
+.navButton.active .navButtonHamburger::before{
+    transform: rotate(135deg) translateX(3px) translateY(2px);
+    width: 25px;
+}
+
+.navButton.active .navButtonHamburger::after{
+    transform: rotate(-135deg) translateX(-9px) translateY(8px);
+    width: 25px;
+}
+
+header .container{
+    padding: 0 2.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    height: var(--header-height);
+    position: fixed;
+    z-index: 2;
+    top:0;
+    left:0;
+    right: 0;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+header nav{
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 2px var(--blue);
+    overflow: auto;
+    background-color: var(--darker-gray);
+    z-index: 10;
+}
+
+header nav ul{
+    padding: 0;
+    margin: 20px 0 0;
+    list-style: none;
+}
+
+header nav a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 0;
+    margin: 5px 0;
+    color: var(--white);
+    transition: color 0.3s;
+    position: relative;
+    outline: none;
+}
+
+header nav a:hover,
+header nav a:focus,
+header nav a.active{
+    color: var(--blue);
+}
+
+header nav a::after{
+    transition: all 0.3s;
+    height: 0;
+    width: 0;
+    background-color: var(--blue);
+    content: "";
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+header nav a:hover::after,
+header nav a.active::after{
+    height: 2px;
+    width: 35px;
+}
+
+/* MAIN */
+
+main{
+    background-color: #F8F8F8;
+    padding: 1.5%;
+}
+
+main .container{
+    min-height: calc(100vh - var(--header-height) - 100px);
+}
+
+/* END OF MAIN */
+
+
+/* FOOTER */
+/* FOOTER */
+/* FOOTER */
+
+footer{
+    background-color: var(--darker-gray);
+    width: 100%;
+    min-height: 100px;
+    color: var(--white);
+    text-align: center;
+    overflow: auto;
+}
+
+footer span{
+    display: block;
+    margin: 15px 0;
+}
+
+
+@media (min-width: 640px) {
+    footer{
+        display: flex;
+        align-items: center;
+    }
+
+    footer .container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    footer span{
+        width: fit-content;
+        margin: 15px;
+    }
+
+
+}
+
+@media (min-width: 768px) {
+    :root{
+        --header-height: 75px;
+    }
+
+    header .container{
+        padding: 0;
+    }
+
+    .navButton{
+        display: none;
+    }
+
+    header nav{
+        position: static;
+        height: var(--header-height) !important;
+        overflow: hidden;
+        opacity: 1 !important;
+        box-shadow: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    header nav ul{
+        display: flex;
+        margin: 0;
+    }
+
+    header nav ul a{
+        margin: 0 12px;
+        padding: 0 5px;
+        line-height: var(--header-height);
+    }
+
+    header nav a::after{
+        bottom: 23px;
+    }
+
+
+    footer span:first-child{
+        order: -1;
+    }
+
+    footer span:nth-child(2){
+        order: 1;
+    }
+
+    footer span:nth-child(3){
+        order: 2;
+    }
+
+}
+
+@media only screen and (min-width: 1280px) {
+    :root {
+        --header-height: 80px;
+    }
+
+    header nav a::after {
+        bottom: 25px;
+    }
+}
+
+@media only screen and (min-width: 1600px){
+
+
+}
+
+@media only screen and (min-width: 1800px){
+
+}
