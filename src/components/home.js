@@ -2,6 +2,7 @@ import "../styles/home.css";
 import {useRef, useState} from "react";
 import axios from "axios";
 import { Multiselect } from 'multiselect-react-dropdown';
+import {Helmet} from "react-helmet";
 
 const Home = () => {
 
@@ -71,6 +72,12 @@ const Home = () => {
 
 
     return(
+    <>
+
+        <Helmet>
+            <title>Formulář | Projekt</title>
+        </Helmet>
+
         <div className="container home">
 
             <div className="formContainer">
@@ -127,6 +134,8 @@ const Home = () => {
             <div className="imageContainer"></div>
 
         </div>
+
+    </>
     )
 }
 

@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/articles.css";
 import Categories from "./categories";
 import Articles from "./articles";
+import {Helmet} from "react-helmet";
 
 
 const ArticlesContainer = () => {
@@ -47,27 +48,33 @@ const ArticlesContainer = () => {
 
 
     return(
-        <div className="container">
-            <h1>Články</h1>
-            {
-                loaded
-                ?   error
-                    ?   <p className="error">{message}</p>
-                    :   <>
-                            <Categories
-                                count={categoriesCount}
-                                categories={categories}
-                            />
+        <>
+            <Helmet>
+                <title>Články | Projekt</title>
+            </Helmet>
 
-                            <Articles
-                                articles={articles}
-                            />
-                        </>
+            <div className="container">
+                <h1>Články</h1>
+                {
+                    loaded
+                    ?   error
+                        ?   <p className="error">{message}</p>
+                        :   <>
+                                <Categories
+                                    count={categoriesCount}
+                                    categories={categories}
+                                />
 
-                :   <p>Načítání článků...</p>
-            }
+                                <Articles
+                                    articles={articles}
+                                />
+                            </>
 
-        </div>
+                    :   <p>Načítání článků...</p>
+                }
+
+            </div>
+        </>
     )
 }
 
